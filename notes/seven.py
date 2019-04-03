@@ -1,4 +1,5 @@
 from migen import *
+from migen.fhdl import verilog
 """
 1. making a table for mapping (0,1,2,...,E,F) -> seven segment led on
 2. hexa is a simple integer from (0 to 15)
@@ -47,4 +48,5 @@ def sevseg_tb(dut):
 # call design to display each number 
  
 dut = sevenseg_ctrl()
-run_simulation(dut, sevseg_tb(dut))
+print(verilog.convert(dut,{dut.hexa, dut.abcdefg}))
+#run_simulation(dut, sevseg_tb(dut))
