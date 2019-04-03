@@ -6,3 +6,6 @@ vpi/migensim.vpi
 *.vcd
 doc/_build
 /build/
+/dist
+.*.swp
+
